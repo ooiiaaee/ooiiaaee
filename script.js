@@ -1,4 +1,4 @@
-﻿const cardImages = [
+const cardImages = [
     'https://cdn-icons-png.flaticon.com/512/4807/4807336.png',
     'https://i.pinimg.com/564x/44/b8/8a/44b88aec28d02c1c142601a6e1b7ee9f.jpg',
     'https://i.pinimg.com/564x/12/b3/e0/12b3e0362205a5845b278ebc5af363d3.jpg',
