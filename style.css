@@ -1,0 +1,165 @@
+﻿
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #ffccd5; 
+    background-image: url('images/heart-background.png'); 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.wrapper {
+    padding: 25px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center; 
+}
+
+.game-header {
+    text-align: center;
+    color: #ff4d88; 
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+    .game-header h1 {
+        font-size: 2.5em;
+        font-weight: 700;
+    }
+
+    .game-header p {
+        font-size: 1.2em;
+        color: #ff0077;
+    }
+
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px; 
+    justify-items: center; 
+    height: auto;
+    width: 100%;
+    max-width: 600px; 
+    margin: 0 auto; 
+}
+
+  
+    .cards .card {
+        cursor: pointer;
+        list-style: none;
+        user-select: none;
+        position: relative;
+        perspective: 1000px;
+        transform-style: preserve-3d;
+        height: 120px;
+        width: 120px; 
+        background: #ff0077;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+
+.card.shake {
+    animation: shake 0.35s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-13px);
+    }
+
+    40% {
+        transform: translateX(13px);
+    }
+
+    60% {
+        transform: translateX(-8px);
+    }
+
+    80% {
+        transform: translateX(8px);
+    }
+}
+
+
+.card .view {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 7px;
+    background: #fff;
+    pointer-events: none;
+    backface-visibility: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card .front-view img {
+    width: 45px;
+}
+
+.card .back-view img {
+    max-width: 50px;
+}
+
+.card .back-view {
+    transform: rotateY(-180deg);
+}
+
+.card.flip .back-view {
+    transform: rotateY(0);
+}
+
+.card.flip .front-view {
+    transform: rotateY(180deg);
+}
+
+@media screen and (max-width: 700px) {
+    .cards {
+        grid-template-columns: repeat(3, 1fr); 
+        max-width: 450px;
+    }
+
+    .card .front-view img {
+        width: 40px;
+    }
+
+    .card .back-view img {
+        max-width: 45px;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr); 
+        max-width: 300px;
+    }
+
+    .card .front-view img {
+        width: 35px;
+    }
+
+    .card .back-view img {
+        max-width: 40px;
+    }
+}
